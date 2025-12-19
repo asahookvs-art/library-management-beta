@@ -1,3 +1,7 @@
+data.json
+test.py
+trial.py
+script.py
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
