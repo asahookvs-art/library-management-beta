@@ -1,0 +1,56 @@
+{% extends 'admin_base.html' %}
+
+{% block top %}
+    <title>Add Student</title>
+{% endblock %}
+
+{% block content %}
+    <section class="position-relative py-4 py-xl-5">
+            <div class="container position-relative">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="text-center">ADD STUDENT</h2>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-8 col-lg-6 col-xl-5 col-xxl-4">
+                        <div class="card mb-5">
+                            <div class="card-body p-sm-5">
+                                <h3 class="text-center mb-4">Enter Details</h3>
+                                <form method="post">
+                                    <div class="mb-3"><label class="form-label m-0" for="admission">Admission Number</label><input class="form-control form-control" type="number" id="admission" name="admission_no" required></div>
+                                    <div class="mb-3"><label class="form-label m-0" for="name-2">Name</label><input class="form-control form-control" type="text" id="name-2" maxlength="255" name="name" placeholder="Full Name" required></div>
+                                    <div class="mb-3"><label class="form-label m-0" for="email-2">Email</label><input class="form-control form-control" type="email" id="email-2" maxlength="120" name="email" placeholder="xyz@example.com" required></div>
+                                    <div class="mb-3"><label class="form-label m-0" for="contact-2">Contact Number</label><input class="form-control" type="tel" id="contact-2" pattern="[6-9]{1}[0-9]{9}" maxlength="10" name="contact" placeholder="Valid Phone No." required></div>
+                                    <div class="mb-3"><label class="form-label m-0" for="date-of-birth">Date of Birth</label><input class="form-control" id="date-of-birth" type="date" name="date_of_birth" required></div>
+                                    <div class="mb-3"><label class="form-label m-0" for="class&section">Class and Section</label>
+                                        <div class="input-group" id="class&section">
+                                            <select class="form-select" name="class" required>
+                                                <optgroup label="Class">
+                                                    <option value="6" {{ 'selected' if Class == '6' else '' }}>6</option>
+                                                    <option value="7" {{ 'selected' if Class == '7' else '' }}>7</option>
+                                                    <option value="8" {{ 'selected' if Class == '8' else '' }}>8</option>
+                                                    <option value="9" {{ 'selected' if Class == '9' else '' }}>9</option>
+                                                    <option value="10" {{ 'selected' if Class == '10' else '' }}>10</option>
+                                                    <option value="11" {{ 'selected' if Class == '11' else '' }}>11</option>
+                                                    <option value="12" {{ 'selected' if Class == '12' else '' }}>12</option>
+                                                </optgroup>
+                                            </select>
+                                            <span class="my-2 mx-2">-</span>
+                                            <select class="form-select" name="section" required>
+                                                <optgroup label="Section">
+                                                    <option value="A" {{ 'selected' if Section == 'A' else '' }}>A</option>
+                                                    <option value="B" {{ 'selected' if Section == 'B' else '' }}>B</option>
+                                                    <option value="C" {{ 'selected' if Section == 'C' else '' }}>C</option>
+                                                </optgroup>
+                                            </select></div>
+                                    </div>
+                                    <div><button class="btn btn-primary w-100 d-block" type="submit">Save</button></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock %}

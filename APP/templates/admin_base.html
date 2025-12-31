@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin-header.css') }}">
+
+    {% block top %}
+    <title>Admin</title>    
+    {% endblock %}
+</head>
+
+<body class="d-flex vh-100 flex-column">
+    <header>
+        <nav class="navbar navbar-expand-lg bg-info py-2">
+            <div class="container"><a class="navbar-brand d-flex align-items-center" href="#"><span class="bs-icon-md bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-journal-bookmark">
+                            <path fill-rule="evenodd" d="M6 8V1h1v6.117L8.743 6.07a.5.5 0 0 1 .514 0L11 7.117V1h1v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8"></path>
+                            <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"></path>
+                            <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z"></path>
+                        </svg></span>
+                    <div></div><span class="fs-4 text-light">Library</span>
+                </a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-3"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navcol-3">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link active" href="{{url_for('admin')}}">Home</a></li>
+                        <li class="nav-item dropdown"><a class="dropdown-toggle nav-link link-dark" aria-expanded="false" data-bs-toggle="dropdown" href="#">Books</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Add Book</a>
+                                <a class="dropdown-item" href="#">View Books</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown"><a class="dropdown-toggle nav-link link-dark" aria-expanded="false" data-bs-toggle="dropdown" href="#">Students</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{url_for('add_student')}}">Add Student</a>
+                                <a class="dropdown-item" href="#">View Student</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown"><a class="dropdown-toggle nav-link link-dark" aria-expanded="false" data-bs-toggle="dropdown" href="#">Actions</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Lost Book</a>
+                                <a class="dropdown-item" href="#">Lost Card</a>
+                                <a class="dropdown-item" href="#">Renew Issued Book</a>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a class="nav-link link-dark" href="#">Announcement</a></li>
+                        <li class="nav-item"><a class="nav-link link-dark" href="#">Fine</a></li>
+                        <li class="nav-item"><a class="nav-link link-dark" href="#">Issued Books</a></li>
+                        <li class="nav-item"><a class="nav-link link-dark" href="#">Requested Books</a></li>
+                    </ul><a class="btn btn-primary" href="{{ url_for('logout') }}">Logout</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }} w-75 d-flex justify-content-center p-2 ms-auto me-auto mt-1 mb-1 alert-dismissible" role="alert">
+                    <span>{{ message }}</span>
+                    <button class="btn-close h-100 py-0" type="button" aria-label="Close" data-bs-dismiss="alert"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    {% block content %}
+    <main></main>
+    <footer class="mt-auto"></footer>
+    {% endblock %}
+    
+    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+win: gunicorn app:app
