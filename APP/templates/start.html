@@ -7,6 +7,7 @@
     <title>Library Management</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/start-footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Login-Form-Basic-icons.css') }}">
 </head>
 
 <body class="d-flex vh-100 flex-column">
@@ -14,9 +15,7 @@
         <nav class="navbar navbar-expand-sm py-2" style="background: var(--bs-cyan);">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="#"><span class="d-flex justify-content-center align-items-center me-2 bs-icon-md bs-icon-rounded bs-icon-primary bs-icon"><svg class="bi bi-journal-bookmark" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M6 8V1h1v6.117L8.743 6.07a.5.5 0 0 1 .514 0L11 7.117V1h1v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8"></path><path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"></path><path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z"></path></svg></span><span class="text-light">Library</span></a>
-                {% block back_button %}
-                    
-                {% endblock %}
+                
             </div>
         </nav>
     </header>
@@ -85,7 +84,6 @@
             </div>
         </footer>
     </footer>
-    <script src="{{ url_for('static', filename='bootstrap/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
 </body>
 
